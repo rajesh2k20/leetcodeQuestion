@@ -13,20 +13,22 @@ class Solution {
 public:
     int ans=0;
     int count=0;
-    void get(TreeNode * root, int k){
+    bool get(TreeNode * root, int k){
         
         if(root==NULL){
-            return ;
+            return false;
         }
         
-        get(root->left, k);
-        
+       bool ans1= get(root->left, k);
+        if(ans==true){
+            return true;
+        }
         count++;
         if(count==k){
             ans=root->val;
-            return ;
+            return true ;
         }
-        get(root->right, k);
+      return   get(root->right, k);
     }
     int kthSmallest(TreeNode* root, int k) {
        ans=0;
