@@ -69,7 +69,7 @@ public:
              break;
          }
      }
-      cout<<index1<<" "<<index2<<endl; 
+      // cout<<index1<<" "<<index2<<endl; 
      return index2-index1+1;
         
         
