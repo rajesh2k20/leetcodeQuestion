@@ -38,7 +38,7 @@ public:
         
         int ans= helper(0, arr);
         int ans2= arr[0]-ans;
-        cout<<ans<<" "<<ans2<<endl;
+        // cout<<ans<<" "<<ans2<<endl;
         if(ans>ans2){
              return "Alice";
         }else if(ans<ans2){
