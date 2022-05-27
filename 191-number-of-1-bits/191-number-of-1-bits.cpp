@@ -15,11 +15,9 @@ public:
         while(n>0){
             
             
-            if( (n&1)==1){
-                ans++;
-            }
-            
-            n=n/2;
+          int val=  n&(-n);
+          n-=val;
+          ans++;
         }
         
         return ans;
