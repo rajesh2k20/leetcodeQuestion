@@ -1,6 +1,7 @@
 class Solution {
 public:
      int dp[30];
+     int dp2[10010][30];
     int mod=1e9+7;
     long long binpow(long long a, long long b, long long m) {
     a %= m;
@@ -20,7 +21,10 @@ public:
              return 0;
          }
         
-        
+        if(dp2[val][count] !=-1){
+            // cout<<val<<" "<<count<<endl;
+            return  dp2[val][count];
+        }
         int ans=dp[count-1];
         // cout<<val<<" "<<count<<endl;
         for(int i=val*2;i<=maxval;i+=val){
@@ -29,7 +33,7 @@ public:
             ans%=mod;
         }
         
-        return ans;
+        return dp2[val][count]= ans;
     }
     int idealArrays(int n, int maxval) {
         
@@ -37,6 +41,7 @@ public:
         
       memset(dp, 0, sizeof(dp));
       dp[0]=1;
+      memset(dp2, -1, sizeof(dp2));
     
       for(int i=1; i<=min(29, n);i++){
           
@@ -47,12 +52,7 @@ public:
           
       }
         
-//      for(int i=0;i<30;i++){
-         
-//          cout<<dp[i]<<" ";
-//      }
-        
-        // cout<<endl;
+
     
         int ans=0;
     
