@@ -46,7 +46,7 @@ public:
         int mask= 1<<(n);
         mask--;
         
-        cout<<mask<<endl;
+        // cout<<mask<<endl;
         
         memset(dp, -1, sizeof(dp));
         
