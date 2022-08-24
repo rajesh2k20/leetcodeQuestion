@@ -21,8 +21,8 @@ public:
         temp2=temp2->next;
         temp=temp->next;
     }
-    
-    if(temp2==head&&temp==NULL){
+    // cout<<temp->val<<endl;
+    if(temp2==head and temp ==NULL){
         return head->next;
     }else{
         temp2->next=temp2->next->next;
