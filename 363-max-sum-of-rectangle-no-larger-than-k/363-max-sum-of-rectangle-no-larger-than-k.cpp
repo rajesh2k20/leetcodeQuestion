@@ -83,7 +83,7 @@ public:
          for(int j=i; j<=n;j++){
              
            int currans= get(i,j, dp,k);
-            cout<<i<<" "<<j<<currans<<endl;
+            // cout<<i<<" "<<j<<currans<<endl;
             if(ans<currans and currans <=k){
                 ans=currans;
             }
