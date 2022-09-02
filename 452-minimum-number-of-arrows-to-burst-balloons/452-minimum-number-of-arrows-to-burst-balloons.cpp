@@ -20,13 +20,16 @@ public:
                 int l= it->second;
                 int r= it->first;
                 
-                // cout<<l<<" "<<r<<endl;
-                
-                int nl= max(l, arr[i][0]);
+               if(arr[i][1]<l  || (arr[i][0]> r)){
+                   s.insert({arr[i][1], arr[i][0]});
+            }
+               else{
+                    int nl= max(l, arr[i][0]);
                 int nr= min(r, arr[i][1]);
                 
                 s.erase(it);
                s.insert({nr,nl});
+               }
                 
             }else{
                 
