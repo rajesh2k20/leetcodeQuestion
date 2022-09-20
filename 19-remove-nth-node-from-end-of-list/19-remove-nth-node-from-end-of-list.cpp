@@ -22,7 +22,7 @@ public:
         temp=temp->next;
     }
     // cout<<temp->val<<endl;
-    if(temp2==head and temp ==NULL){
+    if( temp ==NULL){
         return head->next;
     }else{
         temp2->next=temp2->next->next;
