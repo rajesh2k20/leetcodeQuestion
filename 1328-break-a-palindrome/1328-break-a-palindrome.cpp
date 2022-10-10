@@ -5,40 +5,19 @@ public:
         
       int size= str.size();
       
-     string ans;
-      for(int i=0; i<size;i++ ){
+      for(int i=0; i<size/2;i++){
           
-          
-          if(size%2==1){
-              
-              if(i==size/2){
-                  continue;
-              }
-          }
-          
-          for(int j=0; j<26;j++){
-              
-              char ch=j+'a';
-              
-              if(str[i]==ch){
-                  
-                  continue;
-              }
-              
-              char temp= str[i];
-              
-              str[i]=ch;
-              
-             if(ans.size()==0){
-                 ans=str;
-             }else{
-                 ans= min(ans, str);
-             }
-              
-              str[i]=temp;
+          if(str[i] !='a'){
+              str[i]='a';
+              return str;
           }
       }
         
-        return ans;
+        if(str.size()==1){
+            return "";
+        }else{
+            str[size-1]='b';
+            return str;
+        }
     }
 };
