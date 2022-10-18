@@ -3,25 +3,29 @@ public:
     int findDuplicate(vector<int>& nums) {
         
         
-      int maxval= nums.size();
-    
-    
-     for(int i=0; i<nums.size();i++){
-         
-         int index= nums[i]%maxval;
-         index--;
-         nums[index]+=maxval;
-     }
+     int fast=nums[0];
+      int slow=nums[0];
         
-     for(int i=0; i<nums.size();i++){
+     while(true){
          
-         if(nums[i]/maxval>=2){
-             return i+1;
+         fast=nums[nums[fast]];
+         slow=nums[slow];
+         
+         if(fast==slow){
+             break;
          }
      }
         
-    
-      return 0;
+    cout<<slow<<endl;
+        
+    slow=nums[0];
+        
+    while(slow !=fast){
+        
+       slow=nums[slow];
+        fast=nums[fast];
+    }
+    return slow;
      
         
     }
